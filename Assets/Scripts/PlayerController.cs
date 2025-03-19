@@ -6,8 +6,11 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] float walkingSpeed = 5f;
+    [SerializeField] float runningSpeed = 10f;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float gravity = -9.81f;
+
+    [SerializeField] Transform spawningPoint;
 
     [SerializeField] Transform head;
 
@@ -34,6 +37,17 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = (transform.right * moveHorizontal
                          + transform.forward * moveVertical).normalized;
+
+        //set movement speed
+        float speed = 0f;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = runningSpeed;
+        }
+        else
+        { 
+            speed = walkingSpeed;
+        }
 
         // === MOUSE LOOK ===
         float mouseX = Input.GetAxis("Mouse X");
@@ -65,7 +79,13 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         // Apply movement
-        controller.Move((movement * walkingSpeed + velocity) * Time.deltaTime);
+        controller.Move((movement * speed + velocity) * Time.deltaTime);
     }
 
+    public void ResetBacktoSpawningPoint()
+    {
+        controller.enabled = false;
+        transform.position = spawningPoint.position;  
+        controller.enabled = true;
+    }
 }
