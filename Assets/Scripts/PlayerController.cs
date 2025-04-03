@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform head;
 
+    [SerializeField] FlashLight FlashLight;
+
     float xRotation; // remember head rotation
     Vector3 velocity; // remember player speed (needed for falling)
 
@@ -80,6 +82,12 @@ public class PlayerController : MonoBehaviour
 
         // Apply movement
         controller.Move((movement * speed + velocity) * Time.deltaTime);
+
+        // === TOGGLE FLASHLIGHT ===
+        if (Input.GetMouseButtonDown(0))
+        {
+            FlashLight.ToggleFlashlight();
+        }
     }
 
     public void ResetBacktoSpawningPoint()

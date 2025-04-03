@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4293397572080260637}
   - component: {fileID: 7889921785126063756}
+  - component: {fileID: 2611836122634754437}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -47,6 +48,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinningSpeed: 5
   coinModel: {fileID: 4293397572080260637}
+  gameManager: {fileID: 11400000, guid: 0a82653584758fe40bd3e2af2154fc72, type: 2}
+--- !u!135 &2611836122634754437
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673824632876384268}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.08
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1061667141243936215
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class Coin : MonoBehaviour
 {
     [SerializeField] float spinningSpeed = 5f;
     [SerializeField] Transform coinModel;
+    [SerializeField] GameManagerSO gameManager;
     private void Update()
     {
         //Rotate the coin a little bit every frame 
@@ -15,7 +16,8 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        { 
+        {
+            gameManager.coins += 1; //Add a coin!
             Destroy(this.gameObject);
         }
     }
