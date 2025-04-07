@@ -7,7 +7,5 @@ using UnityEngine;
 
 public class GameManagerSO : ScriptableObject
 {
-
     public int coins;
-
 }

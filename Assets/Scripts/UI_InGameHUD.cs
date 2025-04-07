@@ -13,5 +13,4 @@ public class UI_InGameHUD : MonoBehaviour
     {
         coinTextObject.text = $"Coins: {gameManager.coins}";
     }
-
 }

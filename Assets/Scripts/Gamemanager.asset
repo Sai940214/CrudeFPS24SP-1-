@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cc4d3c40d6cc0499d92379672b72a7, type: 3}
   m_Name: Gamemanager
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: 1
